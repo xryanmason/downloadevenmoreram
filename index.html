@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RAM</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () =>
+        (function updateProgress(el) {
+          if (el.value < (el.max * .7)) el.value += 1, setTimeout(updateProgress, 100, el);
+          else el.labels[0].textContent = "Error!";
+        })(document.querySelector('progress')));
+    </script>
+  </head>
+  <body>
+    <label>Downloading RAM: <progress max="100" value="0"></progress></label>
+  </body>
+</html>
